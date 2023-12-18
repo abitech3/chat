@@ -1,0 +1,53 @@
+{% extends 'chat/includes/base.html' %}
+
+       
+       
+
+  {% block content %}
+  {%  include 'chat/includes/head.html' %}
+  
+  {%  include 'chat/includes/side.html' %}
+  <main id="main" class="main">
+
+    
+  
+<!-- <section class="section dashboard"> -->
+<div class="row">
+
+<!-- Left side columns -->
+<div class="main-table">
+    <table class="table table-borderless ">
+    <thead class="table-light">
+      <tr>
+        <th scope="col">name</th> 
+        <th scope="col">Rating</th>
+        <th scope="col">comments</th>
+      </tr>
+    </thead>
+    <tbody class="p-5">
+      
+      <tr class="p-5">
+        <td scope="row" class="mr-5"><span style="color: rgb(246, 118, 246);"> <i class="bi bi-person"></i></span> essler</td>
+        <td><span style="color: rgb(242, 93, 242);"> <i class="bi bi-star"></i></span> 4.5</td>
+        <td> Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet</td>
+      </tr>
+      <tr class="p-5">
+        <td scope="row" class="mr-5"><span style="color: rgb(246, 118, 246);"> <i class="bi bi-person"></i></span> elmet</td>
+        <td><span style="color: rgb(242, 93, 242);"> <i class="bi bi-star"></i></span> 4.9</td>
+        <td> Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet</td>
+      </tr>
+    </tbody>
+    </table>
+    <!-- End Active Table -->
+    </div>
+
+</main><!-- End #main -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="mdi mdi-arrow-up-bold-box-outline"></i></a>
+  {% endblock %}
+ 
+ 
+
+</body>
+
+</html>

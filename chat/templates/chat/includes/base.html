@@ -1,0 +1,38 @@
+
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>{% block title %}{% endblock %}</title>
+     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+     <link href=" {% static 'chat/assets/vendors/bootstrap/bootstrap.min.css' %}" rel="stylesheet">
+     <link href=" {% static 'chat/assets/vendors/boxicon/css/boxicon.min.css' %}" rel="stylesheet">
+     <link href=" {% static 'chat/assets/vendors/bootstrap-icon/bootstrap-icon.min.css' %}" rel="stylesheet">
+     <link href=" {% static 'chat/css/main.css' %}" rel="stylesheet">
+     <link href=" {% static 'chat/css/style.css' %}" rel="stylesheet">
+     <link rel="stylesheet" href="{% static 'chat/assets/fonts/materialDesignIcon/css/materialdesignicon.min.css' %}">
+
+
+
+    {% block styles %}{% endblock %}
+  </head>
+  <body>
+     <!-- ======= Header ======= -->
+     
+
+
+    {% block content %}{% endblock %}
+    <script src="{% static 'chat/assets/vendors/jquery/jquery-3.4.1.min.js' %}"></script>
+    <script src="{% static 'chat/assets/vendors/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'chat/assets/vendors/apexchart/js/apexchart.min.js' %}"></script>
+    <script src="{% static 'chat/js/main.js' %}"></script>
+
+    {% block scripts %}{% endblock %}
+  </body>
+
+</html>

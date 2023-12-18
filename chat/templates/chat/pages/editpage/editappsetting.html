@@ -1,0 +1,119 @@
+
+{% extends 'chat/includes/base.html' %}
+{% block title %} add company {% endblock %}
+
+
+{% block styles %}
+{% endblock %}
+
+
+
+{% block content %}
+{% include 'chat/includes/head.html'  %}
+{% include 'chat/includes/side.html'  %}
+
+
+<main id="" class="tab-main">
+
+    <div class="container">
+      <section class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-4">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-8 col-md-6 d-flex flex-column align-items-center justify-content-center">
+
+              <div class="d-flex justify-content-center py-4">
+                <a href="" class="logo d-flex align-items-center w-auto">
+                    <!-- {% load static %} -->
+                  <!-- <img src="{% static 'img/first-chat.png' %}" alt="" style="width: 150px;"> -->
+                  <span class="d-none d-lg-block"></span>
+                </a>
+              </div><!-- End Logo -->
+
+              <div class="card mb-3">
+
+                <div class="card-body">
+
+                  <div class="pt-4 pb-2">
+                    <h5 class="card-title text-center pb-0 fs-4">Application</h5>
+                    <p class="text-center small">customize your application</p>
+                  </di> 
+                  {% if error_message %}
+                  <div class="alert alert-danger" role="alert">{{ error_message }}</div>
+                  {% endif %}
+                  <form  method= "post" class="row g-3 needs-validation" enctype="multipart/form-data" novalidate>
+                        {% csrf_token %}
+                    <div class="col-12">
+                      <label for="yourName" class="form-label">Application Tittle</label>
+                          {{form.app_title}}  
+                      <div class="invalid-feedback">Please, enter Company name</div>
+                    </div>
+
+                    <div class="col-12">
+                      <label for="yourEmail" class="form-label">Admin Welcome Text</label>
+                            {{form.app_admintext}}
+                      <div class="invalid-feedback">Please enter a company adresse</div>
+                    </div>
+
+                    <div class="col-12">
+                      <label for="yourUsername" class="form-label">Application favicon</label>
+                      <div class="input-group has-validation">
+                        <!-- <span class="input-group-text" id="inputGroupPrepend">@</span> -->
+
+                        {{form.app_favicon}}
+                        <div class="invalid-feedback">please enter company phone number</div>
+                      </div>
+                    </div>
+
+                    <div class="col-12">
+                      <label for="yourPassword" class="form-label">Application Color</label>
+                      {{form.app_color}}
+                      <div class="invalid-feedback">Please enter company product!</div>
+                    </div>
+
+                    <div class="col-12">
+                      <label for="yourPassword" class="form-label">Admin Logo</label>
+                      {{form.app_adminlogo}}
+                      <div class="invalid-feedback">Please enter company goods!</div>
+                    </div>
+                    <div class="col-12">
+                      <label for="yourPassword" class="form-label">Signup Logo</label>
+                         {{form.app_signup_logo}}
+                      <div class="invalid-feedback">Please enter company service!</div>
+                    </div>
+                    <div class="col-12">
+                      <label for="yourPassword" class="form-label">Login Image</label>
+                      {{form.app_loginimage}}
+                      <div class="invalid-feedback">Please enter company email!</div>
+                    </div>
+                    <div class="col-12">
+                      <label for="yourPassword" class="form-label">Footer Text</label>
+                      {{form.app_footer}}
+                      <div class="invalid-feedback">Please enter company email!</div>
+                    </div>
+                    <div class="col-12">
+                      <input type="hidden" name="user_id" class="form-control" id="yourEmail" value="{{request.user.id}}" required>       
+                    </div>
+                    <div class="col-12">
+                      <button class="btn btn-primary w-100" type="submit">Update</button>
+                    </div>
+                    
+                  </form>
+
+                </div>
+              </div>
+
+             
+
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+    </div>
+</main>
+
+  {% endblock %}
+
+</body>
+</html>

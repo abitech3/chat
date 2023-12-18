@@ -1,0 +1,27 @@
+.tab-container{
+
+    min-width: 200px;
+    background-color: rgb(243, 240, 240);
+    padding: 20px 30px;
+    min-height: 700px;
+    margin-right: 20px;
+
+ }
+
+ .tab-main{
+    margin-left: 200px;
+ }
+
+ .company-card{
+    min-width: 195px;
+    min-height: 70px;
+    margin: 10px;
+    border: 1px solid green;
+    border-radius: 11px;
+ }
+
+ .tab-cont{
+    padding: 20px;
+    margin-top: 29px;
+    min-width: 700px;
+ }

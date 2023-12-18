@@ -1,0 +1,40 @@
+.welcom-box{
+    min-height: 140px;
+    background-color: purple;
+    color: aliceblue;
+    margin-bottom: 20px;
+    padding: 12px;
+    }
+    
+    .sale-box{
+    min-height: 70px;
+    min-width: 70px;
+    box-sizing: border-box;
+    
+    }
+    
+    .report-card{
+        min-height: 10px;
+        min-width: 600px;
+    }
+    
+    
+    #reportsChart{
+    
+        height: 10px !important;
+    }
+    
+    .talk-rate{
+    
+        min-height: 10px;
+        min-width: 200px;
+        padding: 1px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    
+    .main-table table thead tr th {
+     
+       padding-right:100px;
+    
+    }

@@ -1,0 +1,343 @@
+{% extends 'chat/includes/base.html' %}
+
+       
+       
+
+  {% block content %}
+  
+  {%  include 'chat/includes/head.html' %}
+ 
+  {%  include 'chat/includes/side.html' %}
+  <main id="main" class="main">
+
+    
+    <div class="  d-flex justify-content-around welcom-box">
+      <div> 
+    
+        <p>Hello,  Stone!</p>
+    
+      <h5>welcome back to FirsChat</h5>
+  
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, et tempora commodi </p> 
+      </div>
+      <div>
+  <!-- <img src="assets/img/botlogo.png" alt="" srcset="" style="width: 100px; height: 100px;">    -->
+
+    </div>
+</div>
+
+<!-- <section class="section dashboard"> -->
+<div class="row">
+
+<!-- Left side columns -->
+<div class="col-lg-4">
+    <!-- Revenue Card -->
+    <div class="row">
+      <div class="col-6">
+      <div class="sale-box">
+       <div class="card">
+        <div class="card-body">
+          <div class="d-flex justify-content-between">
+            <div style=" padding:10px ; width: 50px; margin-top: 20px; margin-left: 10px; margin-right: 10px;">
+              <i  style="color: purple; font-size: 45px;"  class="iconbox__icon mdi mdi-chat-outline"></i>
+            </div>
+
+          <div class="row g-0">
+            <div class="col-12" style="margin-top: 12px;"><h3 style="color: rgb(36, 35, 35); font-size: 22px;"><b>122</b></h3></div>
+             <div class="col-12"><h5>Chats</h5></div>
+          </div>
+          </div>
+       </div>
+      </div>
+    </div>  <!-- End Revenue Card -->
+  </div>  <!-- End sale box -->   
+
+  <div class="col-6">
+<div class="sale-box">
+
+    <div class="card">
+
+        <div class="card-body">
+          <div class="d-flex justify-content-between">
+            <div style=" padding:10px ; width: 50px; margin-top: 20px; margin-left: 7px;">
+              <i class="iconbox__icon mdi mdi-sailing"></i>
+            </div>
+
+          <div class="row g-0">
+            <div class="col-12" style="margin-top: 12px;"><h3 style="color: rgb(4, 1, 1); font-size: 22px;"><b>32</b></h3></div>
+             <div class="col-12" style="padding-right: 16px;"><h5>Resolved</h5></div>
+          </div>
+          </div>
+         
+      </div>  
+      </div>
+      </div>
+    </div> <!-- End Revenue Card -->
+  </div>  <!-- End sale box
+
+  
+
+<!-- sale box -->
+<div class="row">
+<div class="col-6">
+
+<div class="sale-box">
+
+      <div class="card">
+
+        
+
+        <div class="card-body">
+          <div class="d-flex justify-content-between">
+            <div style=" padding:10px ; width: 50px; margin-top: 20px; margin-left: 10px; margin-right: 10px;">
+              <i  class="iconbox__icon mdi mdi-open-in-new"></i>
+            </div>
+
+          <div class="row g-0">
+            <div class="col-12" style="margin-top: 12px;"><h3 style="color: rgb(36, 35, 35); font-size: 22px;"><b>84</b></h3></div>
+             <div class="col-12"><h5>Open</h5></div>
+          </div>
+          </div>
+
+         
+      </div>
+      </div>
+    </div>     <!-- End Revenue Card -->
+  </div>   <!-- End sale box
+  <!-- end sale box -->
+
+  <!-- sale box -->
+   <div class="col-6">
+    <div class="sale-box">
+
+      <div class="card">
+
+       
+
+        <div class="card-body">
+          <div class="d-flex justify-content-between">
+            <div style=" padding:10px ; width: 50px; margin-top: 20px; margin-left: 10px; margin-right: 10px;">
+              <i  style="color: purple;"  class="iconbox__icon mdi mdi-mailbox-open-up-outline"></i></div>
+
+          <div class="row g-0">
+            <div class="col-12" style="margin-top: 12px;"><h3 style="color: rgb(36, 35, 35); font-size: 22px;"><b>68</b></h3></div>
+             <div class="col-12"><h5>Lead</h5></div>
+          </div>
+          </div>
+
+        </div>
+      </div>
+      </div>
+      </div>
+    </div>   <!-- End Revenue Card -->
+  </div>   <!-- End sale box
+      
+ 
+</div>     
+<!-- End 6-columns -->
+
+<!-- Right side columns -->
+<div class="col-lg-8">
+
+  <!-- Report -->
+  <div class="report-card">
+    <div class="">
+      <!-- <div class="filter">
+        <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+        <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+          <li class="dropdown-header text-start">
+            <h6>Filter</h6>
+          </li>
+
+          <li><a class="dropdown-item" href="#">Today</a></li>
+          <li><a class="dropdown-item" href="#">This Month</a></li>
+          <li><a class="dropdown-item" href="#">This Year</a></li>
+        </ul>
+      </div>  -->
+
+      <div class="">
+        <h5 class="card-title">Average Respond Time <span>(in minutes)</span></h5>
+
+        <!-- Line Chart -->
+        <div id="reportsChart"></div>
+
+        <script>
+          document.addEventListener("DOMContentLoaded", () => {
+            new ApexCharts(document.querySelector("#reportsChart"), {
+              series: [{
+                name: 'Monday',
+                data: [31, 40, 28, 51, 42, 82, 56],
+              }, {
+                name: 'Tuesday',
+                data: [11, 32, 45, 32, 34, 52, 41]
+              }, {
+                name: 'Wednesday',
+                data: [15, 11, 32, 18, 9, 24, 11]
+              },
+              {
+                name: 'Thursday',
+                data: [15, 11, 32, 18, 9, 24, 11]
+              },
+            {
+              name: 'Friday',
+                data: [15, 11, 32, 18, 9, 24, 11] 
+            }, {
+              name: 'Saturday',
+                data: [15, 11, 32, 18, 9, 24, 11]   
+            },
+          {
+            name: 'Saturday',
+                data: [15, 11, 32, 18, 9, 24, 11]   
+          }],
+              chart: {
+                height: 200,
+                type: 'area',
+                toolbar: {
+                  show: true
+                },
+              },
+              markers: {
+                size: 2
+              },
+              colors: ['#4154f1', '#2eca6a', '#ff771d'],
+              fill: {
+                type: "gradient",
+                gradient: {
+                  shadeIntensity: 1,
+                  opacityFrom: 0.3,
+                  opacityTo: 0.4,
+                  stops: [0, 90, 100]
+                }
+              },
+              dataLabels: {
+                enabled: false
+              },
+              stroke: {
+                curve: 'smooth',
+                width: 2
+              },
+              xaxis: {
+                type: 'datetime',
+                categories: ["2018-09-19T00:00:00.000Z", "2018-09-19T01:30:00.000Z", "2018-09-19T02:30:00.000Z", "2018-09-19T03:30:00.000Z", "2018-09-19T04:30:00.000Z", "2018-09-19T05:30:00.000Z", "2018-09-19T06:30:00.000Z"]
+              },
+              tooltip: {
+                x: {
+                  format: 'dd/MM/yy HH:mm'
+                },
+              }
+            }).render();
+          });
+        </script>
+        <!-- End Line Chart -->
+
+      </div>
+
+    </div>
+  </div><!-- End Reports -->
+
+</div>
+</div>
+
+<div class="row">
+
+<div class="col-8">
+<div class="card">
+<div class="card-body">
+<div class="talk-rate"> 
+<div class=" d-flex justify-content-between">  
+ <div class="p-3">
+  <h3 class="card-title" style="color: black;">Conversation Rating</h3>
+   </div>
+ <div class="ml-5 p-3">
+  <a href="{% url 'chat:conversation' %}" class="card-title" style="color: rgb(244, 158, 244);">see more..</a>
+
+ </div>
+
+</div>
+
+</div> 
+<div class="main-table">
+<table class="table table-borderless ">
+<thead class="table-light">
+  <tr>
+    <th scope="col">name</th> 
+    <th scope="col">Rating</th>
+    <th scope="col">comments</th>
+  </tr>
+</thead>
+<tbody class="p-5">
+  
+  <tr class="p-5">
+    <td scope="row" class="mr-5"><span style="color: rgb(246, 118, 246);"> <i class="bi bi-person"></i></span> essler</td>
+    <td><span style="color: rgb(242, 93, 242);"> <i class="bi bi-star"></i></span> 4.5</td>
+    <td> Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet</td>
+  </tr>
+  <tr class="p-5">
+    <td scope="row" class="mr-5"><span style="color: rgb(246, 118, 246);"> <i class="bi bi-person"></i></span> elmet</td>
+    <td><span style="color: rgb(242, 93, 242);"> <i class="bi bi-star"></i></span> 4.9</td>
+    <td> Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet</td>
+  </tr>
+</tbody>
+</table>
+<!-- End Active Table -->
+</div>
+</div>
+</div>
+
+</div>
+<div class="col-4">
+<div class="card">
+<div class="card-body">
+<h5 class="card-title">Teams Stats</h5>
+<div class="main-table">
+<table class="table table-borderless ">
+  <thead class="table-light">
+    <!-- <tr>
+      <th scope="col">Name</th> 
+      <th scope="col">Rating</th>
+      <th scope="col">comments</th>
+    </tr> -->
+  </thead>
+  <tbody class="p-5">
+     {% for users in user%}  
+    <tr class="p-5">
+      <td>
+        {% load static %}
+        <div class="d-flex align-items-start">
+               
+       <img src="{{users.user_image.url}}" alt="" class="rounded-5" style="width: 50px;">
+       <div class="row" >
+        <div class="col-12"> <h6 style="  font-size: 12px; font-family: Arial, Helvetica, sans-serif; padding-left: 6px ;">{{users.first_name}}</h6></div>
+        
+        <div class="col-12"> <h6 style="font-size: 14px; font-family: Arial, Helvetica, sans-serif; padding-left: 6px;">22messages</h6></div>
+
+       </div>
+      </div>
+    </td>
+      <td><i class="mdi mdi-plus-box-outline"></i></td>
+    </tr>
+   {% endfor %}
+  </tbody>
+</table>
+</div>
+
+
+</div>
+
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+</main><!-- End #main -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="mdi mdi-arrow-up-bold-box-outline"></i></a>
+  {% endblock %}
+ 
+ 
+
+</body>
+
+</html>

@@ -1,0 +1,117 @@
+{% extends 'chat/includes/base.html' %}
+
+
+{% block styles %}
+{% endblock %}
+
+
+
+  {% block content %}
+
+<main id="main" class="main">
+{% include 'chat/includes/head.html'  %}
+{% include 'chat/includes/side.html'  %}
+
+
+
+    <!-- <div class="pagetitle">
+      <h1>Leads</h1>
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item">Leads</li>
+          <li class="breadcrumb-item active">Data</li>
+        </ol>
+      </nav> -->
+    </div><!-- End Page Title -->
+
+    <section class="section">
+      <div class="row">
+        <div class="col-lg-12">
+
+          <div class="card">
+            <div class="d-flex justify-content-between container-fluid m-3">
+           <div class="row">
+               <div class="col-4"><h2 class="pagetitle">Application Setting</h2></div>
+               <!-- <div class="col-4"> <i class="ri-group-2-fill"></i><span>420 Contacts</span></div> -->
+               <div class="col-4">
+                <div class="search-bar">
+                  <form class="search-form d-flex align-items-center" method="POST" action="#">
+                    <input type="text" name="query" placeholder="Search" title="Enter search keyword">
+                    <button type="submit" title="Search"><i class="bi bi-search"></i></button>
+                  </form>
+                </div><!-- End Search Bar -->
+               </div>
+           </div>
+           <div class="row gap-0 ">
+               <div class="col-4">
+              <!-- <button type="button" class="btn btn-outline-danger" style="font-size: 14px;">Action</button> -->
+
+               </div>
+               <div class="col-4">
+              <!-- <button type="button" class="btn btn-outline-warning" style="font-size: 14px;">Documents</button> -->
+                
+               </div>
+               <div class="col-4 ">  
+                <!-- <button type="button" class="btn btn-success" style="font-size: 14px;">Contacts</button> -->
+
+                 </div>
+           </div>
+
+            </div>
+            <div class="card-body">
+              <!-- Table with stripped rows -->
+              <table class="table table-light ">
+                <thead class="">
+                  <tr>
+                    <th scope="col" >1</th>
+                    <th scope="col" class="lead">Title</th>
+                    <th scope="col" class="lead">Admin Text</th>
+                    <th scope="col" class="lead">Footer</th>
+                    <th scope="col" class="lead">Action</th>
+                  </tr>
+                </thead>
+                <tbody class="">
+                 {%  for appsets in appset %} 
+                  <tr>
+                    <tr>
+                      <th scope="row"><input type="checkbox" name="" id=""></th>
+                      <td>
+                        <div class="row">
+                       <div class="col-12">{{appsets.app_title}}</div>
+                       <!-- <div class="col-12" style="font-size: 9px;">{{companys.com_email}}</div> -->
+                      </div>
+                    </td>
+                      <td>
+                        <div class="row">
+                       <div class="col-12">{{appsets.app_admintext}}</div>
+                       <!-- <div class="col-12" style="font-size: 9px;"> <i class="ri-flag-2-fill"></i>{{companys.com_goods}}</div> -->
+                      </div>
+                      </td>
+                      <td><h6 class="leads">{{appsets.app_footer}}</h6></td>
+                      <td>
+                       <a href="{% url 'chat:edit_app' appsets.id %}"><i class="mdi mdi-pencil-outline" style="color: rgb(230, 181, 230); font-size: 27px;"></i></a>
+                       <a href="{% url 'chat:del_app' appsets.id %}"> <i class="mdi mdi-delete-empty" style="color: rgb(230, 181, 230); font-size: 27px;"></i></a>
+                      </td>
+
+                  </tr>
+
+                 {% endfor %}
+                 
+                 
+                   
+                  
+                 
+                </tbody>
+              </table>
+              <!-- End Table with stripped rows -->
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main><!-- End #main -->
+  {% endblock %}

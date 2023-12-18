@@ -1,0 +1,65 @@
+<aside id="sidebar" class="sidebar">
+
+    <ul class="sidebar-nav" id="sidebar-nav">
+
+      <li class="nav-item" id="test">
+        <a class="nav-link " id="" href="{%  url 'chat:home' %}">
+          <i class="iconbox__icon mdi mdi-home"></i>
+          <span id="">Dashboard</span>
+        </a>
+      </li><!-- End Dashboard Nav -->
+
+  
+      <!-- <li class="nav-heading">Pages</li> -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="{% url 'chat:chat' %}">
+          <i class="iconbox__icon mdi mdi-chat"></i>
+          <span id="ch">Chats</span>
+        </a>
+      </li><!-- End Profile Page Nav -->
+
+      <li class="nav-item">
+      <a class="nav-link collapsed" href="{% url 'chat:bot' %}">
+        <i class="iconbox__icon mdi mdi-creation"></i>
+          <span>Bots</span>
+        </a>
+      </li><!-- End F.A.Q Page Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="{% url 'chat:lead' %}">
+          <i class="iconbox__icon mdi mdi-gmail"></i>
+          <span>Leads</span>
+        </a>
+      </li><!-- End Contact Page Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="{% url 'chat:setting' %}">
+          <i class="iconbox__icon mdi mdi-settings-outline"></i>
+          <span>Settings</span>
+        </a>
+      </li><!-- End Register Page Nav -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
+          <i class="iconbox__icon mdi mdi-folder-settings"></i><span>custome</span><i class=" ms-auto"></i>
+        </a>
+        <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li class="nav-item">
+            <a class="nav-link collapsed" href="{% url 'chat:app_setting' %}">
+              <i class="iconbox__icon mdi mdi-settings-box"></i>
+              <span>Application</span>
+            </a>
+          </li><!-- End Register Page Nav -->
+          <li>
+            <a href="{% url 'chat:app_setting' %}">
+              <i class="iconbox__icon mdi mdi-domain"></i><span>Domain</span>
+            </a>
+          </li>
+        </ul>
+      </li><!-- End Forms Nav -->
+     
+
+     
+    </ul>
+
+  </aside>End Sidebar

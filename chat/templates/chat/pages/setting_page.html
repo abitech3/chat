@@ -1,0 +1,194 @@
+{% extends 'chat/includes/base.html' %}
+ {% load static %}
+ {% block styles %}
+<link rel="stylesheet" href="{% static 'chat/setpage/css/tab.css' %}">
+ {% endblock%}
+
+
+  {% block content %}
+
+{% include 'chat/includes/head.html'  %}
+
+  {% include 'chat/includes/side.html'  %}
+  <main id="" class="tab-main">
+
+    <!-- <div class="pagetitle">
+      <h1>Form Layouts</h1>
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item">Forms</li>
+          <li class="breadcrumb-item active">Layouts</li>
+        </ol>
+      </nav> -->
+    </div><!-- End Page Title -->
+    <section class="section">
+      <div class="row">
+        <!-- <div class="col-lg-6"> -->
+
+          <!-- <div class="card"> -->
+            <!-- <div class="card-body"> -->
+              <h5 class="card-title">Horizontal Form</h5>
+
+            <!-- Vertical Pills Tabs -->
+            <!-- <div class="tab-container"> -->
+            <div class="d-flex align-items-start">
+            <div class="tab-container">
+              <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                <button class="nav-link active" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">Company</button>
+                <button class="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">User</button>
+                <button class="nav-link" id="v-pills-messages-tab" data-bs-toggle="pill" data-bs-target="#v-pills-messages" type="button" role="tab" aria-controls="v-pills-messages" aria-selected="false">Integration</button>
+              </div>
+            </div>
+            <!-- tab eader end -->
+
+              <div class="tab-content" id="v-pills-tabContent">
+                <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+          <div class="tab-cont">
+          
+             <div class="card">
+              <div class="d-flex justify-content-between">
+                <div class="pagetitle">
+            <h1 class="p-2">Companies</h1>
+                </div>
+                <div>
+                   <div class="pagetitle p-2 " role="button"> 
+                     <a href="{% url  'chat:add_company' %}" style=" font-size: 14px; background-color:rgb(226, 126, 226); padding: 6px; color: beige;">Add New campany</a></div>
+                </div>
+           </div>
+            <div class="card-body">
+              <h5 class="card-title"></h5>
+            <div class="d-flex align-items-start" >
+              {% for companys in company%}
+              <div>
+                <div class="company-card d-flex justify-content-between align-items-center">
+                  <div class="p-3"><h5 class="">{{companys.com_name}}</h5></div>
+                  <div class="p-3"><i class="mdi mdi-arrow-right" style="font-size: 34px; color: rgb(242, 143, 242);"></i></div>
+              </div>
+              </div>
+              {% endfor %}
+              <div>
+                <!-- <div class="company-card d-flex align-items-center"> -->
+                  <!-- <a href="{% url 'chat:add_company'   %}" class="mx-auto"><i class="mdi mdi-plus-box-outline " style="font-size: 34px; color: rgb(242, 143, 242);"></i></a> -->
+                <!-- <div class="p-3">rela</div> -->
+               <!-- </div> -->
+              </div>
+            </div>
+              
+            </div>
+          </div><!-- End Default Card -->
+             </div>
+                </div>
+                <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+                  <div class="tab-cont">
+                  <div class="card">
+                    <div class="d-flex justify-content-between">
+                      <div class="pagetitle">
+                  <h1 class="p-2">Users</h1>
+                      </div>
+                      <div>
+                         <div class="pagetitle p-2 " role="button"> 
+                           <a href="{%  url 'chat:add_user'  %}" style=" font-size: 14px; background-color:rgb(226, 126, 226); padding: 6px; color: beige;">Add New User</a></div>
+                      </div>
+                 </div>
+                    <div class="card-body">
+                      <!-- <h5 class="card-title">Default Card</h5> -->
+                       <!-- Default Table -->
+              <table class="table table-light">
+                <thead class="label">
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Phone</th>
+                    <th scope="col">Action</th>
+                  </tr>
+                </thead>
+                <tbody class="text-body-tertiary">
+                  {% for users in user %}
+                  <tr>
+                    <th scope="row">1</th>
+                    <td><i class="mdi mdi-human" style="color: purple; font-size:24px; padding-right:5px ;"></i><span>{{users.first_name}}</span></td>
+                    <td style="font-size: 14px;">{{users.email}}</td>
+                    <td>+268909909</td>
+                    <td>
+                      <i class="mdi mdi-table-edit" style="color: rgb(240, 122, 240); font-size: 28px;"></i>
+                      <i class="mdi mdi-delete-empty" style="color: purple;font-size: 28px;"></i>
+
+                    </td>
+                  </tr>
+                {% endfor %}
+                </tbody>
+              </table>
+              <!-- End Default Table Example -->
+                   </div>
+                    </div>
+                  </div><!-- End Default Card -->
+                </div>
+                <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
+                  <div class="tab-cont">
+                  <div class="card">
+                    <div class="d-flex justify-content-between">
+                      <div class="pagetitle">
+                  <h1 class="p-2">Integration</h1>
+                      </div>
+                      <div>
+                         <div class="pagetitle p-2 " role="button"> 
+                           <a href="{% url 'chat:integrate'  %}" style=" font-size: 14px; background-color:rgb(226, 126, 226); padding: 6px; color: beige;">Add New Integartion</a></div>
+                      </div>
+                 </div>
+                    <div class="card-body">
+                      <div class="d-flex">
+                         <!-- Default Card -->
+          {% for integrates in integrate %}
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">{{integrates.fb_pagename}}</h5>
+              <!-- <i class="mdi mdi-b" style="font-size: 59px; color: rgb(68, 68, 138);"> </i> -->
+               <img class=" rounded-4" src="{{integrates.fb_logo.url}}" alt="" style="height: 100px; width:100px;">
+            </div>
+          </div><!-- End Default Card --> <!-- Default Card -->
+       {% endfor %}
+
+ 
+                      </div>
+                      <!-- <h5 class="card-title">Default Card</h5> -->
+                     <div>
+                    </div>
+                  </div><!-- End Default Card -->
+                </div>
+              </div>
+            </div>
+            <!-- End Vertical Pills Tabs -->
+
+            <!-- </div> -->
+          <!-- </div> -->
+
+         
+
+        <!-- </div> -->
+
+        <!-- <div class="col-lg-6"> -->
+
+         
+          
+
+          
+
+        <!-- </div> -->
+      </div>
+    </section>
+
+  </main><!-- End #main -->
+
+ 
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="mdi mdi-arrow-up-short"></i></a>
+
+  {% endblock %}
+ 
+ 
+
+</body>
+
+</html>

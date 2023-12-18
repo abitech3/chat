@@ -1,0 +1,87 @@
+{% extends 'chat/includes/base.html' %}
+{% block title %} login{% endblock %}
+{% load static %}
+
+{% block styles %} 
+<link rel="stylesheet" href="{% static 'chat/login/css/login.css' %}">
+{% endblock %}
+
+   {% block content %}
+    <div class="d-flex">
+      {% load static %}
+      <div class="login-item" style="background-image: url('{% static  'chat/login/assets/img/logintemplate1.png' %}');">
+         
+        <div class="">
+            <div class="card-body">
+              <!-- <img src="/assets/img/first-chat.png" alt style="width: 250px; padding: 23px; margin-left: 14px;"> -->
+            </div>
+          </div>
+    
+      </div> 
+
+      <!-- firs item end -->
+      <div class="login-item1" >
+        <div class="">
+            <div class="card-body">
+              <h5 class="card-title fw-bold" style="color: black;">Login</h5>
+                <p>Lorem ipsum dolor sit alaudantium voluptas e
+                  rror? Ea suscipit minus velit enim elig explicabo officia!</p>
+              <!-- Vertical Form -->
+              {% if error_message %}
+              <div class="alert alert-danger" role="alert">{{ error_message }}</div>
+              {% endif %}
+                <form class="row g-3" method="POST" action="">
+                        {% csrf_token %}
+                <div class="col-12">
+                  <label for="inputNanme4" class="form-label">Username</label>
+                  <input type="text" class="form-control" id="inputNanme4" name="username" required>
+                </div>
+                <div class="col-12">
+                  <label for="inputEmail4" class="form-label">Password</label>
+                  <input type="password" class="form-control" id="inputEmail4" name="password" required>
+                </div>
+
+                <div class="col-12 mt-5 ">
+                <input type="submit" id="inputPassword" class="form-control" 
+                style="background-color: rgb(189, 98, 189); text-align: center; color: white;">
+                </div>
+
+                <div class="col-6 mt-5">
+              <button type="submit" class="btn">
+                {% load static %}
+              <a href="#"><img src="{% static 'chat/login/assets/img/facebook.png' %}"  style="width: 20px;"><span style="padding: 8px; color: black;">login with Facebook</span> </a>
+              </button>
+                </div>
+                <div class="col-6 mt-5">
+                    <button class="btn">
+              <a href="#"><img src="{% static 'chat/login/assets/img/gmail.png' %}"  style="width: 20px;"><span style="padding:8px ; color: black;">login with Google</span> </a>
+               
+                    </button>
+                  </div>
+              </form><!-- Vertical Form -->
+               <div class="hstack justify-content-between mt-2 p-2">
+                <a href="{% url 'chat:forgot'  %}">forggot Password</a>
+                <p class="small mb-0">Don't have account? <a href="{% url 'chat:signup' %}">Create an account</a></p>
+               </div>
+            </div>
+          </div>
+ 
+            
+          
+                  
+             
+              
+        
+            
+      </div>
+    </div>
+
+
+ 
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="mdi mdi-arrow-up-bold-box"></i></a>
+  {% endblock %}
+  
+</body>
+
+</html>

@@ -1,0 +1,105 @@
+{% extends 'chat/includes/base.html' %}
+{% block title %} bot setting {% endblock %}
+
+
+{% block style %}
+{% endblock %}
+
+
+
+{% block content %}
+<main id="" class="tab-main">
+{% include 'chat/includes/head.html'  %}
+{% include 'chat/includes/side.html'  %}
+
+    <div class="container">
+      <section class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-4">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-8 col-md-6 d-flex flex-column align-items-center justify-content-center">
+
+              <div class="d-flex justify-content-center py-4">
+                <a href="" class="logo d-flex align-items-center w-auto">
+                    <!-- {% load static %} -->
+                  <!-- <img src="{% static 'img/first-chat.png' %}" alt="" style="width: 150px;"> -->
+                  <span class="d-none d-lg-block"></span>
+                </a>
+              </div><!-- End Logo -->
+
+              <div class="card mb-3">
+
+                <div class="card-body">
+
+                  <div class="pt-4 pb-2">
+                    <h5 class="card-title text-center pb-0 fs-4">Bot Setting</h5>
+                    <p class="text-center small">control bot or function here</p>
+                  </div>
+                  {% if msg %}
+                  <div class="alert alert-success bg-success text-light border-0 alert-dismissible fade show" role="alert">
+                    {{msg}}
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
+                  </div>
+                    {% endif %}
+
+                  <form  method= "post" class="row g-3 needs-validation" enctype="multipart/form-data" novalidate>
+                    {% csrf_token %}
+                    <div class="col-12">
+                      <label for="yourName" class="form-label">Bot Name</label>
+                                {{form.bot_name}}
+                      <div class="invalid-feedback">Please, select your bot image</div>
+                    </div>
+                    <div class="col-12">
+                      <label for="yourName" class="form-label">Model</label>
+                      {{form.bot_model}}
+                        
+                      <div class="invalid-feedback">Please, enter your API_KEY!</div>
+                    </div>
+
+                    <div class="col-12">
+                      <label for="yourEmail" class="form-label">API Key</label>
+                      {{form.api_key}}
+                             
+                      <div class="invalid-feedback">Please enter a GPTchat model</div>
+                    </div>
+
+                    <div class="col-12">
+                      <label for="yourUsername" class="form-label">Prompt</label>
+                      <div class="input-group has-validation">        
+                      {{form.system_role}}  
+                      </div>
+                    </div>
+
+                    <div class="col-12">
+                      <label for="yourEmail" class="form-label">API Key</label>
+                      {{form.bot_image}}
+                             
+                      <div class="invalid-feedback">Please enter a GPTchat model</div>
+                    </div>
+                    <div class="col-12">
+                      <input type="hidden" name="user_id" class="form-control" id="yourEmail" value="{{request.user.id}}" required>       
+                    </div>
+      
+                    <div class="col-12">
+                      <button class="btn btn-primary w-100" type="submit">Create Account</button>
+                    </div>
+                    
+                  </form>
+
+                </div>
+              </div>
+
+             
+
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+    </div>
+</main>
+
+  {% endblock %}
+
+</body>
+</html>
